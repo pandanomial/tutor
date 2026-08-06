@@ -3,201 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stephanie's Expert Academic Tutoring | K-12 to Master's Level</title>
+    <title>Expert Academic Tutoring | K-12 to Master's Level & Computer Science</title>
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --accent-color: #319795;
-            --bg-color: #f7fafc;
-            --text-color: #2d3748;
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg: #f8fafc;
             --card-bg: #ffffff;
+            --text: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
 
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 5rem 1.5rem 4rem;
+        }
+
+        header .badge {
+            background-color: var(--accent);
+            color: white;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
         header h1 {
-            margin: 0 0 1rem 0;
-            font-size: 2.5rem;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
         }
 
         header p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #cbd5e1;
         }
 
+        .cta-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.85rem 2.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: background-color 0.2s, transform 0.2s;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
         .container {
-            max-width: 1000px;
-            margin: -2rem auto 3rem auto;
+            max-width: 1100px;
+            margin: -3rem auto 4rem;
             padding: 0 1.5rem;
             position: relative;
         }
 
-        .card {
+        /* Highlights Bar */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-card {
             background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
+            padding: 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
         }
 
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
+        .highlight-card h3 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
+        .highlight-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Subjects Grid */
         .subjects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .subject-category {
-            background: var(--bg-color);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-color);
+        .subject-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e2e8f0;
         }
 
-        .subject-category h3 {
-            margin-top: 0;
-            color: var(--secondary-color);
-            font-size: 1.15rem;
+        .subject-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
         }
 
-        .subject-category ul {
-            margin: 0;
-            padding-left: 1.25rem;
-        }
-
-        .subject-category li {
-            margin-bottom: 0.3rem;
-        }
-
-        .levels-badge {
-            display: inline-block;
-            background: var(--accent-color);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
+        .subject-card h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .cta-section {
-            text-align: center;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        .subject-card ul {
+            list-style: none;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
+        .subject-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .subject-card li:last-child {
+            border-bottom: none;
+        }
+
+        .subject-card li::before {
+            content: "✓";
+            color: var(--accent);
             font-weight: bold;
-            transition: background-color 0.2s;
-            margin-top: 1rem;
+            margin-right: 0.75rem;
         }
 
-        .btn:hover {
-            background-color: var(--primary-color);
+        /* Contact Section Box */
+        .contact-box {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
+        .contact-box h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-box .cta-btn {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .contact-box .cta-btn:hover {
+            background-color: #f1f5f9;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #718096;
+            padding: 2.5rem;
+            color: var(--text-light);
             font-size: 0.9rem;
+            background-color: #1e293b;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.1rem;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Expert Academic Tutoring</h1>
-        <p>Comprehensive, personalized instruction from K-12 up to Master's level in Computer Science and more.</p>
+        <span class="badge">Professional Academic Mentorship</span>
+        <h1>Elite Tutoring & Master's Level Guidance</h1>
+        <p>Comprehensive, rigorous, and individualized instruction spanning STEM, Computer Science, Classical Languages, and Humanities for K-12, College, and Master's students.</p>
+        <a href="mailto:your-email@example.com" class="cta-btn">Book a Session</a>
     </header>
 
     <div class="container">
 
-        <!-- Levels Covered -->
-        <div class="card" style="text-align: center;">
-            <span class="levels-badge">K-12 TO MASTER'S LEVEL</span>
-            <h2>Comprehensive Educational Support</h2>
-            <p>Providing specialized, rigorous tutoring tailored to each student's unique academic goals—from foundational K-12 concepts and SAT preparation to advanced Master's level Computer Science and academic coursework.</p>
-        </div>
-
-        <!-- Subjects Covered -->
-        <div class="card">
-            <h2>Subjects Offered</h2>
-            <div class="subjects-grid">
-                
-                <div class="subject-category">
-                    <h3>STEM & Computer Science</h3>
-                    <ul>
-                        <li>Computer Science (All Levels up to Master's)</li>
-                        <li>Mathematics & SAT Math</li>
-                        <li>Physics, Chemistry & Physical Sciences</li>
-                    </ul>
-                </div>
-
-                <div class="subject-category">
-                    <h3>Languages & Literature</h3>
-                    <ul>
-                        <li>English Language & Literature</li>
-                        <li>Chinese</li>
-                        <li>Classical Greek & Latin</li>
-                    </ul>
-                </div>
-
-                <div class="subject-category">
-                    <h3>Humanities & Test Prep</h3>
-                    <ul>
-                        <li>Philosophy</li>
-                        <li>SAT Preparation (All Sections)</li>
-                        <li>K-12 Core Curriculum</li>
-                    </ul>
-                </div>
-
+        <!-- Highlights / Value Proposition -->
+        <div class="highlights">
+            <div class="highlight-card">
+                <h3>All Academic Levels</h3>
+                <p>From K-12 fundamentals and SAT prep to elite undergraduate and Master's level curriculum.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>Computer Science Expert</h3>
+                <p>Specialized instruction covering all levels of programming, algorithms, and graduate computer science.</p>
+            </div>
+            <div class="highlight-card">
+                <h3>Multidisciplinary Mastery</h3>
+                <p>Deep expertise bridging modern STEM fields with classical languages, philosophy, and literature.</p>
             </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="cta-section">
-            <h2>Ready to Elevate Your Learning?</h2>
-            <p>Get in touch to schedule a session or discuss custom tutoring plans for your academic path.</p>
-            <a href="mailto:your-email@example.com" class="btn">Contact Me</a>
+        <!-- Section Header -->
+        <div class="section-title">
+            <h2>Subjects & Specializations</h2>
+            <p>Tailored tutoring solutions designed to excel your mastery in key disciplines.</p>
+        </div>
+
+        <!-- Subjects Grid -->
+        <div class="subjects-grid">
+            
+            <!-- STEM & CS -->
+            <div class="subject-card">
+                <h3>💻 Computer Science & STEM</h3>
+                <ul>
+                    <li>Computer Science (All Levels to Master's)</li>
+                    <li>Mathematics & Advanced Calculus</li>
+                    <li>Physics & Physical Sciences</li>
+                    <li>Chemistry</li>
+                </ul>
+            </div>
+
+            <!-- Languages & Lit -->
+            <div class="subject-card">
+                <h3>🏛️ Languages & Literature</h3>
+                <ul>
+                    <li>English Language & Literature</li>
+                    <li>Chinese Language</li>
+                    <li>Classical Greek</li>
+                    <li>Latin</li>
+                </ul>
+            </div>
+
+            <!-- Humanities & Test Prep -->
+            <div class="subject-card">
+                <h3>📚 Test Prep & Humanities</h3>
+                <ul>
+                    <li>SAT Preparation (All Sections)</li>
+                    <li>Philosophy & Logic</li>
+                    <li>K-12 Comprehensive Support</li>
+                    <li>Advanced Academic Writing</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-box">
+            <h2>Ready to Achieve Your Academic Goals?</h2>
+            <p>Whether you're tackling advanced graduate algorithms, preparing for college entrance exams, or building deep foundational skills, get in touch to start your custom plan.</p>
+            <a href="mailto:your-email@example.com" class="cta-btn">Get in Touch Today</a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Academic Tutoring. All rights reserved.</p>
+        <p>&copy; 2026 Academic Tutoring & Mentorship. All rights reserved.</p>
     </footer>
 
 </body>
