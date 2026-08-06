@@ -7,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd, #ff6b6b);
-            --card-bg: rgba(255, 255, 255, 0.92);
+            --card-bg: rgba(255, 255, 255, 0.95);
             --primary: #2b2d42;
             --accent: #ff007f;
             --accent-hover: #d9046b;
@@ -92,6 +91,8 @@
             display: inline-block;
             transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
             box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
+            border: none;
+            cursor: pointer;
         }
 
         .cta-btn:hover {
@@ -216,38 +217,79 @@
             flex-shrink: 0;
         }
 
-        /* Contact Section Box */
+        /* Interactive Contact Form Box */
         .contact-box {
             background: linear-gradient(135deg, #ff007f 0%, #7928ca 100%);
             color: white;
             border-radius: 24px;
-            padding: 3.5rem 2rem;
-            text-align: center;
+            padding: 3.5rem 2.5rem;
             box-shadow: 0 20px 40px rgba(121, 40, 202, 0.3);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .contact-box h2 {
             font-family: 'Fredoka', sans-serif;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-size: 2.5rem;
+            text-align: center;
         }
 
         .contact-box p {
             color: #f3e8ff;
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
             font-size: 1.15rem;
         }
 
-        .contact-box .cta-btn {
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Fredoka', sans-serif;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: #ffd166;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2b2d42;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px #ffd166;
+        }
+
+        .form-submit-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .form-submit-container .cta-btn {
             background-color: white;
             color: #7928ca;
+            width: 100%;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .contact-box .cta-btn:hover {
-            background-color: #f8fafc;
-            color: #ff007f;
+        .form-submit-container .cta-btn:hover {
+            background-color: #ffd166;
+            color: #2b2d42;
         }
 
         /* Footer */
@@ -257,6 +299,7 @@
             background-color: #1e1b4b;
             color: #cbd5e1;
             font-size: 0.95rem;
+            margin-top: 4rem;
         }
 
         @media (max-width: 768px) {
@@ -276,7 +319,7 @@
         <h1>Pandanomial Tutoring</h1>
         <h2>Elite Academic Mentorship & Master's Guidance</h2>
         <p>Comprehensive, rigorous, and vibrant instruction spanning STEM, Computer Science, Classical Languages, and Humanities for K-12, College, and Master's students.</p>
-        <a href="mailto:your-email@example.com" class="cta-btn">Book a Session Today! 🚀</a>
+        <a href="#contact-form-section" class="cta-btn">Book a Session Today! 🚀</a>
     </header>
 
     <div class="container">
@@ -341,11 +384,41 @@
 
         </div>
 
-        <!-- Contact Section -->
-        <div class="contact-box">
-            <h2>Ready to Elevate Your Academic Journey?</h2>
-            <p>Whether you are mastering graduate-level computer science, prepping for the SAT, or diving into classical languages, get in touch with Pandanomial Tutoring to map out your success plan.</p>
-            <a href="mailto:your-email@example.com" class="cta-btn">Get in Touch Today ✨</a>
+        <!-- Interactive Contact Form Box (Submits directly to your email via mailto) -->
+        <div id="contact-form-section" class="contact-box">
+            <h2>Get in Touch</h2>
+            <p>Fill out the details below to submit your session request directly to my inbox!</p>
+            
+            <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="Student_Name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="Student_Email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Primary Subject of Interest</label>
+                    <select id="subject" name="Subject_Area">
+                        <option value="Computer Science & STEM">Computer Science & STEM</option>
+                        <option value="Languages & Literature">Languages & Literature</option>
+                        <option value="Humanities & Test Prep">Humanities & Test Prep</option>
+                        <option value="Other / Multiple Subjects">Other / Multiple Subjects</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Details / Goals</label>
+                    <textarea id="message" name="Message_Details" rows="4" placeholder="Tell me about your academic level, goals, or schedule requirements..." required></textarea>
+                </div>
+
+                <div class="form-submit-container">
+                    <button type="submit" class="cta-btn">Submit Request via Email ✨</button>
+                </div>
+            </form>
         </div>
 
     </div>
