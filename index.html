@@ -135,7 +135,7 @@
         /* Subjects Grid */
         .subjects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
         }
@@ -157,10 +157,12 @@
         .subject-card h3 {
             color: var(--primary);
             font-size: 1.25rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 0.75rem;
         }
 
         .subject-card ul {
@@ -169,21 +171,19 @@
 
         .subject-card li {
             padding: 0.5rem 0;
-            border-bottom: 1px solid #f1f5f9;
             color: var(--text);
             display: flex;
-            align-items: center;
-        }
-
-        .subject-card li:last-child {
-            border-bottom: none;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
         }
 
         .subject-card li::before {
             content: "✓";
             color: var(--accent);
             font-weight: bold;
-            margin-right: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
         }
 
         /* Contact Section Box */
@@ -243,61 +243,61 @@
 
     <div class="container">
 
-        <!-- Highlights / Value Proposition -->
+        <!-- Highlights Bar -->
         <div class="highlights">
             <div class="highlight-card">
-                <h3>All Academic Levels</h3>
-                <p>From K-12 fundamentals and SAT prep to elite undergraduate and Master's level curriculum.</p>
+                <h3>K-12 to Master's</h3>
+                <p>Tailored developmental coaching and advanced academic mastery across every educational milestone.</p>
             </div>
             <div class="highlight-card">
-                <h3>Computer Science Expert</h3>
-                <p>Specialized instruction covering all levels of programming, algorithms, and graduate computer science.</p>
+                <h3>Computer Science Hub</h3>
+                <p>Complete mastery from beginner coding up to advanced graduate-level computer science curriculums.</p>
             </div>
             <div class="highlight-card">
-                <h3>Multidisciplinary Mastery</h3>
-                <p>Deep expertise bridging modern STEM fields with classical languages, philosophy, and literature.</p>
+                <h3>Multidisciplinary Depth</h3>
+                <p>Rigorous training balancing technical STEM rigor with classical languages and philosophical frameworks.</p>
             </div>
         </div>
 
         <!-- Section Header -->
         <div class="section-title">
-            <h2>Subjects & Specializations</h2>
-            <p>Tailored tutoring solutions designed to elevate your mastery in key disciplines.</p>
+            <h2>Detailed Subjects & Specializations</h2>
+            <p>Explore comprehensive tutoring tracks tailored to foster elite academic achievement.</p>
         </div>
 
         <!-- Subjects Grid -->
         <div class="subjects-grid">
             
-            <!-- STEM & CS -->
+            <!-- Computer Science & STEM -->
             <div class="subject-card">
                 <h3>💻 Computer Science & STEM</h3>
                 <ul>
-                    <li>Computer Science (All Levels to Master's)</li>
-                    <li>Mathematics & Advanced Calculus</li>
-                    <li>Physics & Physical Sciences</li>
-                    <li>Chemistry</li>
+                    <li><strong>Computer Science:</strong> All levels up to Master's (Algorithms, Systems, Deep Learning)</li>
+                    <li><strong>Mathematics:</strong> Algebra, Geometry, Trigonometry, Pre-Calculus, Calculus</li>
+                    <li><strong>Physical Sciences:</strong> Physics, Mechanics, and Chemistry curriculum</li>
+                    <li><strong>General STEM:</strong> K-12 integrated science and math foundations</li>
                 </ul>
             </div>
 
-            <!-- Languages & Lit -->
+            <!-- Languages & Literature -->
             <div class="subject-card">
                 <h3>🏛️ Languages & Literature</h3>
                 <ul>
-                    <li>English Language & Literature</li>
-                    <li>Chinese Language</li>
-                    <li>Classical Greek</li>
-                    <li>Latin</li>
+                    <li><strong>English:</strong> K-12 English Language Arts, Literature analysis, and Essay composition</li>
+                    <li><strong>Chinese:</strong> Conversational fluency, reading, writing, and grammatical structures</li>
+                    <li><strong>Classical Greek:</strong> Koine/Attic Greek grammar, syntax, and classical texts</li>
+                    <li><strong>Latin:</strong> Classical Latin translation, morphology, and syntax</li>
                 </ul>
             </div>
 
             <!-- Humanities & Test Prep -->
             <div class="subject-card">
-                <h3>📚 Test Prep & Humanities</h3>
+                <h3>📚 Humanities & Test Prep</h3>
                 <ul>
-                    <li>SAT Preparation (All Sections)</li>
-                    <li>Philosophy & Logic</li>
-                    <li>K-12 Comprehensive Support</li>
-                    <li>Advanced Academic Writing</li>
+                    <li><strong>Philosophy:</strong> Logic, ethics, epistemology, and historical philosophy studies</li>
+                    <li><strong>SAT Preparation:</strong> Comprehensive coaching for Evidence-Based Reading, Writing, and Math</li>
+                    <li><strong>Academic Mentorship:</strong> College application guidance, study skills, and exam strategies</li>
+                    <li><strong>Core K-12 Support:</strong> Cross-disciplinary homework help and foundational enrichment</li>
                 </ul>
             </div>
 
@@ -305,8 +305,8 @@
 
         <!-- Contact Section -->
         <div class="contact-box">
-            <h2>Ready to Achieve Your Academic Goals?</h2>
-            <p>Whether you're tackling advanced graduate algorithms, preparing for college entrance exams, or building deep foundational skills, get in touch with Pandanomial Tutoring to start your custom plan.</p>
+            <h2>Ready to Elevate Your Academic Journey?</h2>
+            <p>Whether you are mastering graduate-level computer science, prepping for the SAT, or diving into classical languages, get in touch with Pandanomial Tutoring to map out your success plan.</p>
             <a href="mailto:your-email@example.com" class="cta-btn">Get in Touch Today</a>
         </div>
 
