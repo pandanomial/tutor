@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --card-bg: rgba(255, 255, 255, 0.95);
+            --card-bg: rgba(255, 255, 255, 0.92);
             --primary: #2b2d42;
             --accent: #ff007f;
             --accent-hover: #d9046b;
@@ -23,7 +23,15 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #a1c4fd 65%, #c2e9fb 100%);
+            /* Complex, rich multi-layered background with vibrant mesh gradients & patterns */
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(255, 0, 127, 0.4) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(121, 40, 202, 0.4) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(37, 117, 252, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 90%, rgba(255, 209, 102, 0.3) 0px, transparent 50%),
+                radial-gradient(at 10% 80%, rgba(52, 211, 153, 0.3) 0px, transparent 50%),
+                linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #a1c4fd 65%, #c2e9fb 100%);
             background-attachment: fixed;
             color: var(--text);
             line-height: 1.6;
@@ -34,10 +42,13 @@
         header {
             text-align: center;
             padding: 5rem 1.5rem 4rem;
-            background: linear-gradient(135deg, #ff007f 0%, #7928ca 50%, #2575fc 100%);
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.95) 0%, rgba(121, 40, 202, 0.95) 50%, rgba(37, 117, 252, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover;
+            background-blend-mode: overlay;
             color: white;
             clip-path: ellipse(160% 100% at 50% 0%);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-bottom: 5px solid #ffd166;
         }
 
         header .badge {
@@ -61,7 +72,7 @@
             margin-bottom: 0.25rem;
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.25);
+            text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
             color: #ffffff;
             line-height: 1.1;
         }
@@ -72,6 +83,7 @@
             margin-bottom: 1rem;
             font-weight: 600;
             color: #ffd166;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
@@ -79,6 +91,7 @@
             max-width: 750px;
             margin: 0 auto 2.5rem;
             color: #f8fafc;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .cta-btn {
@@ -92,7 +105,7 @@
             font-weight: 700;
             display: inline-block;
             transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             border: none;
             cursor: pointer;
         }
@@ -100,7 +113,7 @@
         .cta-btn:hover {
             background-color: #ffffff;
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
 
         /* Container */
@@ -109,6 +122,7 @@
             margin: -2rem auto 4rem;
             padding: 0 1.5rem;
             position: relative;
+            z-index: 2;
         }
 
         /* Highlights Bar */
@@ -123,7 +137,7 @@
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             text-align: center;
             border-top: 6px solid #ff007f;
             backdrop-filter: blur(10px);
@@ -132,6 +146,12 @@
 
         .highlight-card:hover {
             transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+            display: inline-block;
         }
 
         .highlight-card h3 {
@@ -155,14 +175,16 @@
         .section-title h2 {
             font-family: 'Fredoka', sans-serif;
             font-size: 2.5rem;
-            color: #2b2d42;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
             margin-bottom: 0.5rem;
         }
 
         .section-title p {
-            color: #4a4e69;
+            color: #f1f5f9;
             font-size: 1.1rem;
             font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
 
         /* Subjects Grid */
@@ -176,8 +198,8 @@
         .subject-card {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
             border: 2px solid rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
@@ -185,7 +207,31 @@
 
         .subject-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .subject-image-banner {
+            height: 140px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .banner-stem {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .banner-lang {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .banner-humanities {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .subject-card-content {
+            padding: 2rem;
         }
 
         .subject-card h3 {
@@ -215,19 +261,23 @@
         }
 
         .subject-card li::before {
-            content: "✨";
+            content: "📌";
             flex-shrink: 0;
         }
 
         /* Interactive Contact Form Box */
         .contact-box {
-            background: linear-gradient(135deg, #7928ca 0%, #ff007f 100%);
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.95) 0%, rgba(255, 0, 127, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80');
+            background-blend-mode: overlay;
+            background-size: cover;
             color: white;
             border-radius: 24px;
             padding: 3.5rem 2.5rem;
-            box-shadow: 0 20px 40px rgba(121, 40, 202, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
             max-width: 700px;
             margin: 0 auto;
+            border: 3px solid rgba(255, 255, 255, 0.3);
         }
 
         .contact-box h2 {
@@ -235,6 +285,7 @@
             margin-bottom: 0.5rem;
             font-size: 2.5rem;
             text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .contact-box p {
@@ -242,6 +293,7 @@
             text-align: center;
             margin-bottom: 2rem;
             font-size: 1.15rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .form-group {
@@ -254,6 +306,7 @@
             margin-bottom: 0.5rem;
             font-size: 1rem;
             color: #ffd166;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .form-group input, 
@@ -267,7 +320,7 @@
             font-size: 1rem;
             background: rgba(255, 255, 255, 0.95);
             color: #2b2d42;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .form-group input:focus, 
@@ -286,7 +339,7 @@
             background-color: #ffd166;
             color: #2b2d42;
             width: 100%;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .form-submit-container .cta-btn:hover {
@@ -298,10 +351,11 @@
         footer {
             text-align: center;
             padding: 2.5rem;
-            background-color: #2b2d42;
+            background-color: #090d16;
             color: #cbd5e1;
             font-size: 0.95rem;
             margin-top: 4rem;
+            border-top: 3px solid #ff007f;
         }
 
         @media (max-width: 768px) {
@@ -314,7 +368,7 @@
 <body>
 
     <header>
-        <span class="badge">Welcome to Excellence</span>
+        <span class="badge">⭐ Welcome to Elite Excellence ⭐</span>
         <h1>Pandanomial</h1>
         <h2>Elite Academic Mentorship & Master's Guidance</h2>
         <p>Comprehensive, rigorous, and vibrant instruction spanning STEM, Computer Science, Classical Languages, and Humanities for K-12, College, and Master's students.</p>
@@ -323,25 +377,28 @@
 
     <div class="container">
 
-        <!-- Highlights Bar -->
+        <!-- Highlights Bar with Icons -->
         <div class="highlights">
             <div class="highlight-card">
-                <h3>🌟 K-12 to Master's</h3>
+                <div class="highlight-icon">🎓</div>
+                <h3>K-12 to Master's</h3>
                 <p>Tailored developmental coaching and advanced academic mastery across every educational milestone.</p>
             </div>
             <div class="highlight-card">
-                <h3>💻 Computer Science Hub</h3>
+                <div class="highlight-icon">💻</div>
+                <h3>Computer Science Hub</h3>
                 <p>Complete mastery from beginner coding up to advanced graduate-level computer science curriculums.</p>
             </div>
             <div class="highlight-card">
-                <h3>🎯 Multidisciplinary Depth</h3>
+                <div class="highlight-icon">🎯</div>
+                <h3>Multidisciplinary Depth</h3>
                 <p>Rigorous training balancing technical STEM rigor with classical languages and philosophical frameworks.</p>
             </div>
         </div>
 
         <!-- Section Header -->
         <div class="section-title">
-            <h2>Detailed Subjects & Specializations</h2>
+            <h2>✨ Detailed Subjects & Specializations ✨</h2>
             <p>Explore comprehensive tutoring tracks tailored by Pandanomial Tutoring to foster elite academic achievement.</p>
         </div>
 
@@ -350,72 +407,81 @@
             
             <!-- Computer Science & STEM -->
             <div class="subject-card">
-                <h3>💻 Computer Science & STEM</h3>
-                <ul>
-                    <li><strong>Computer Science:</strong> All levels up to Master's (Algorithms, Systems, Architecture, Software Engineering)</li>
-                    <li><strong>Mathematics:</strong> Foundational math, Algebra, Geometry, Trigonometry, Calculus, and Statistics</li>
-                    <li><strong>Physical Sciences & Physics:</strong> Classical mechanics, electricity, magnetism, and physical sciences</li>
-                    <li><strong>Chemistry:</strong> General chemistry, organic foundations, and chemical problem-solving</li>
-                </ul>
+                <div class="subject-image-banner banner-stem"></div>
+                <div class="subject-card-content">
+                    <h3>💻 Computer Science & STEM</h3>
+                    <ul>
+                        <li><strong>Computer Science:</strong> All levels up to Master's (Algorithms, Systems, Architecture, Software Engineering)</li>
+                        <li><strong>Mathematics:</strong> Foundational math, Algebra, Geometry, Trigonometry, Calculus, and Statistics</li>
+                        <li><strong>Physical Sciences & Physics:</strong> Classical mechanics, electricity, magnetism, and physical sciences</li>
+                        <li><strong>Chemistry:</strong> General chemistry, organic foundations, and chemical problem-solving</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Languages & Literature -->
             <div class="subject-card">
-                <h3>🏛️ Languages & Literature</h3>
-                <ul>
-                    <li><strong>English:</strong> K-12 English Language Arts, literary analysis, reading comprehension, and writing</li>
-                    <li><strong>Chinese:</strong> Conversational proficiency, reading, writing, and formal grammar structures</li>
-                    <li><strong>Classical Greek:</strong> Koine and Attic Greek translation, grammar, morphology, and text analysis</li>
-                    <li><strong>Latin:</strong> Classical Latin grammar, translation techniques, syntax, and classical literature</li>
-                </ul>
+                <div class="subject-image-banner banner-lang"></div>
+                <div class="subject-card-content">
+                    <h3>🏛️ Languages & Literature</h3>
+                    <ul>
+                        <li><strong>English:</strong> K-12 English Language Arts, literary analysis, reading comprehension, and writing</li>
+                        <li><strong>Chinese:</strong> Conversational proficiency, reading, writing, and formal grammar structures</li>
+                        <li><strong>Classical Greek:</strong> Koine and Attic Greek translation, grammar, morphology, and text analysis</li>
+                        <li><strong>Latin:</strong> Classical Latin grammar, translation techniques, syntax, and classical literature</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Humanities & Test Prep -->
             <div class="subject-card">
-                <h3>📚 Humanities & Test Prep</h3>
-                <ul>
-                    <li><strong>Philosophy:</strong> Logic, ethics, epistemology, and historical philosophical movements</li>
-                    <li><strong>SAT Preparation:</strong> Comprehensive coaching for SAT Math, Evidence-Based Reading, and Writing</li>
-                    <li><strong>K-12 Comprehensive:</strong> Full-spectrum homework support and academic enrichment across school grades</li>
-                    <li><strong>Master's Support:</strong> Advanced research guidance, technical writing, and higher-level coursework mentoring</li>
-                </ul>
+                <div class="subject-image-banner banner-humanities"></div>
+                <div class="subject-card-content">
+                    <h3>📚 Humanities & Test Prep</h3>
+                    <ul>
+                        <li><strong>Philosophy:</strong> Logic, ethics, epistemology, and historical philosophical movements</li>
+                        <li><strong>SAT Preparation:</strong> Comprehensive coaching for SAT Math, Evidence-Based Reading, and Writing</li>
+                        <li><strong>K-12 Comprehensive:</strong> Full-spectrum homework support and academic enrichment across school grades</li>
+                        <li><strong>Master's Support:</strong> Advanced research guidance, technical writing, and higher-level coursework mentoring</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
 
         <!-- Interactive Contact Form Box (Submits directly to your email via mailto) -->
         <div id="contact-form-section" class="contact-box">
-            <h2>Get in Touch</h2>
+            <h2>✉️ Get in Touch ✉️</h2>
             <p>Fill out the details below to submit your session request directly to my inbox!</p>
             
             <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
                 <div class="form-group">
-                    <label for="name">Your Name</label>
+                    <label for="name">👤 Your Name</label>
                     <input type="text" id="name" name="Student_Name" placeholder="Enter your full name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Your Email Address</label>
+                    <label for="email">📧 Your Email Address</label>
                     <input type="email" id="email" name="Student_Email" placeholder="Enter your email address" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="subject">Primary Subject of Interest</label>
+                    <label for="subject">🎯 Primary Subject of Interest</label>
                     <select id="subject" name="Subject_Area">
-                        <option value="Computer Science & STEM">Computer Science & STEM</option>
-                        <option value="Languages & Literature">Languages & Literature</option>
-                        <option value="Humanities & Test Prep">Humanities & Test Prep</option>
-                        <option value="Other / Multiple Subjects">Other / Multiple Subjects</option>
+                        <option value="Computer Science & STEM">💻 Computer Science & STEM</option>
+                        <option value="Languages & Literature">🏛️ Languages & Literature</option>
+                        <option value="Humanities & Test Prep">📚 Humanities & Test Prep</option>
+                        <option value="Other / Multiple Subjects">🌟 Other / Multiple Subjects</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Details / Goals</label>
+                    <label for="message">✍️ Details / Goals</label>
                     <textarea id="message" name="Message_Details" rows="4" placeholder="Tell me about your academic level, goals, or schedule requirements..." required></textarea>
                 </div>
 
                 <div class="form-submit-container">
-                    <button type="submit" class="cta-btn">Submit Request via Email ✨</button>
+                    <button type="submit" class="cta-btn">Submit Request via Email ✨🚀</button>
                 </div>
             </form>
         </div>
@@ -423,7 +489,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Pandanomial Tutoring. All rights reserved. Designed with vibrancy and passion.</p>
+        <p>&copy; 2026 Pandanomial Tutoring. All rights reserved. Designed with complex mesh gradients, icons, and passion.</p>
     </footer>
 
 </body>
