@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --card-bg: rgba(255, 255, 255, 0.92);
+            --card-bg: rgba(255, 255, 255, 0.94);
             --primary: #2b2d42;
             --accent: #ff007f;
             --accent-hover: #d9046b;
@@ -23,14 +23,14 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Complex, rich multi-layered background with vibrant mesh gradients & patterns */
+            /* Enhanced dynamic multi-layered background with richer mesh tones */
             background-color: #0f172a;
             background-image: 
-                radial-gradient(at 10% 20%, rgba(255, 0, 127, 0.4) 0px, transparent 50%),
-                radial-gradient(at 90% 10%, rgba(121, 40, 202, 0.4) 0px, transparent 50%),
-                radial-gradient(at 50% 50%, rgba(37, 117, 252, 0.3) 0px, transparent 50%),
-                radial-gradient(at 80% 90%, rgba(255, 209, 102, 0.3) 0px, transparent 50%),
-                radial-gradient(at 10% 80%, rgba(52, 211, 153, 0.3) 0px, transparent 50%),
+                radial-gradient(circle at 15% 15%, rgba(255, 0, 127, 0.45) 0px, transparent 45%),
+                radial-gradient(circle at 85% 10%, rgba(121, 40, 202, 0.45) 0px, transparent 45%),
+                radial-gradient(circle at 50% 45%, rgba(37, 117, 252, 0.35) 0px, transparent 50%),
+                radial-gradient(circle at 85% 85%, rgba(255, 209, 102, 0.4) 0px, transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(52, 211, 153, 0.35) 0px, transparent 45%),
                 linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #a1c4fd 65%, #c2e9fb 100%);
             background-attachment: fixed;
             color: var(--text);
@@ -41,49 +41,49 @@
         /* Hero Section with Extra Large Brand Name */
         header {
             text-align: center;
-            padding: 5rem 1.5rem 4rem;
-            background: linear-gradient(135deg, rgba(255, 0, 127, 0.95) 0%, rgba(121, 40, 202, 0.95) 50%, rgba(37, 117, 252, 0.95) 100%),
+            padding: 5.5rem 1.5rem 4.5rem;
+            background: linear-gradient(135deg, rgba(255, 0, 127, 0.92) 0%, rgba(121, 40, 202, 0.92) 50%, rgba(37, 117, 252, 0.92) 100%),
                         url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80') center/cover;
             background-blend-mode: overlay;
             color: white;
             clip-path: ellipse(160% 100% at 50% 0%);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            border-bottom: 5px solid #ffd166;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+            border-bottom: 6px solid #ffd166;
         }
 
         header .badge {
             background-color: #ffd166;
             color: #2b2d42;
             font-family: 'Fredoka', sans-serif;
-            font-size: 1rem;
+            font-size: 1.05rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 0.5rem 1.5rem;
+            letter-spacing: 2.5px;
+            padding: 0.6rem 1.75rem;
             border-radius: 50px;
             font-weight: 700;
             display: inline-block;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         header h1 {
             font-family: 'Fredoka', sans-serif;
-            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-size: clamp(3.8rem, 8.5vw, 7.5rem);
             margin-bottom: 0.25rem;
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+            text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.35);
             color: #ffffff;
             line-height: 1.1;
         }
 
         header h2 {
             font-family: 'Fredoka', sans-serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
             font-weight: 600;
             color: #ffd166;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
         }
 
         header p {
@@ -91,7 +91,7 @@
             max-width: 750px;
             margin: 0 auto 2.5rem;
             color: #f8fafc;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
         .cta-btn {
@@ -99,27 +99,28 @@
             color: #2b2d42;
             font-family: 'Fredoka', sans-serif;
             font-size: 1.2rem;
-            padding: 1rem 3rem;
+            padding: 1.1rem 3.25rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             display: inline-block;
-            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
             border: none;
             cursor: pointer;
         }
 
         .cta-btn:hover {
             background-color: #ffffff;
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            color: #ff007f;
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
         }
 
         /* Container */
         .container {
             max-width: 1100px;
-            margin: -2rem auto 4rem;
+            margin: -2.5rem auto 4rem;
             padding: 0 1.5rem;
             position: relative;
             z-index: 2;
@@ -129,89 +130,91 @@
         .highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
+            gap: 1.75rem;
+            margin-bottom: 4rem;
         }
 
         .highlight-card {
             background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            padding: 2.25rem 2rem;
+            border-radius: 22px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
             text-align: center;
-            border-top: 6px solid #ff007f;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
+            border-top: 7px solid #ff007f;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .highlight-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
         }
 
         .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.85rem;
             display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
         .highlight-card h3 {
             font-family: 'Fredoka', sans-serif;
             color: #2b2d42;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             margin-bottom: 0.75rem;
         }
 
         .highlight-card p {
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         /* Section Styling */
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
         .section-title h2 {
             font-family: 'Fredoka', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.5);
             margin-bottom: 0.5rem;
         }
 
         .section-title p {
             color: #f1f5f9;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
         /* Subjects Grid */
         .subjects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: 2.25rem;
+            margin-bottom: 4.5rem;
         }
 
         .subject-card {
             background: var(--card-bg);
-            border-radius: 20px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
         }
 
         .subject-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.28);
         }
 
         .subject-image-banner {
-            height: 140px;
+            height: 150px;
             width: 100%;
             background-size: cover;
             background-position: center;
@@ -219,25 +222,25 @@
         }
 
         .banner-stem {
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80');
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80');
         }
 
         .banner-lang {
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80');
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80');
         }
 
         .banner-humanities {
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45)), url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80');
         }
 
         .subject-card-content {
-            padding: 2rem;
+            padding: 2.25rem;
         }
 
         .subject-card h3 {
             font-family: 'Fredoka', sans-serif;
             color: #2b2d42;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1.25rem;
             display: flex;
             align-items: center;
@@ -251,12 +254,12 @@
         }
 
         .subject-card li {
-            padding: 0.6rem 0;
+            padding: 0.65rem 0;
             color: var(--text);
             display: flex;
             align-items: flex-start;
             gap: 0.75rem;
-            font-size: 1rem;
+            font-size: 1.02rem;
             font-weight: 500;
         }
 
@@ -267,79 +270,81 @@
 
         /* Interactive Contact Form Box */
         .contact-box {
-            background: linear-gradient(135deg, rgba(121, 40, 202, 0.95) 0%, rgba(255, 0, 127, 0.95) 100%),
+            background: linear-gradient(135deg, rgba(121, 40, 202, 0.94) 0%, rgba(255, 0, 127, 0.94) 100%),
                         url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80');
             background-blend-mode: overlay;
             background-size: cover;
             color: white;
-            border-radius: 24px;
-            padding: 3.5rem 2.5rem;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-            max-width: 700px;
+            border-radius: 28px;
+            padding: 4rem 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+            max-width: 750px;
             margin: 0 auto;
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.35);
         }
 
         .contact-box h2 {
             font-family: 'Fredoka', sans-serif;
             margin-bottom: 0.5rem;
-            font-size: 2.5rem;
+            font-size: 2.7rem;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.4);
         }
 
         .contact-box p {
             color: #f3e8ff;
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1.15rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            margin-bottom: 2.25rem;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
         .form-group {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
             font-family: 'Fredoka', sans-serif;
             margin-bottom: 0.5rem;
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #ffd166;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
         .form-group input, 
         .form-group select, 
         .form-group textarea {
             width: 100%;
-            padding: 0.9rem 1.2rem;
-            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
             border: none;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.95);
+            font-size: 1.05rem;
+            background: rgba(255, 255, 255, 0.96);
             color: #2b2d42;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
 
         .form-group input:focus, 
         .form-group select:focus, 
         .form-group textarea:focus {
             outline: none;
-            box-shadow: 0 0 0 3px #ffd166;
+            box-shadow: 0 0 0 4px #ffd166;
+            transform: translateY(-2px);
         }
 
         .form-submit-container {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 2.25rem;
         }
 
         .form-submit-container .cta-btn {
             background-color: #ffd166;
             color: #2b2d42;
             width: 100%;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
         }
 
         .form-submit-container .cta-btn:hover {
@@ -350,17 +355,20 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 2.5rem;
+            padding: 3rem;
             background-color: #090d16;
             color: #cbd5e1;
-            font-size: 0.95rem;
-            margin-top: 4rem;
-            border-top: 3px solid #ff007f;
+            font-size: 1rem;
+            margin-top: 5rem;
+            border-top: 4px solid #ff007f;
         }
 
         @media (max-width: 768px) {
             header h2 {
-                font-size: 1.7rem;
+                font-size: 1.8rem;
+            }
+            .contact-box {
+                padding: 2.5rem 1.5rem;
             }
         }
     </style>
@@ -489,7 +497,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Pandanomial Tutoring. All rights reserved. Designed with complex mesh gradients, icons, and passion.</p>
+        <p>&copy; 2026 Pandanomial Tutoring. All rights reserved. Designed with rich mesh gradients, icons, and passion.</p>
     </footer>
 
 </body>
