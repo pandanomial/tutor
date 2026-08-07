@@ -311,7 +311,7 @@
             flex-shrink: 0;
         }
 
-        /* Booking / Contact Hub Box */
+        /* Interactive Contact Form Box */
         .contact-box {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
@@ -322,37 +322,100 @@
             max-width: 750px;
             margin: 0 auto;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            text-align: center;
         }
 
         .contact-box h2 {
             font-family: 'Fredoka', sans-serif;
             margin-bottom: 0.5rem;
             font-size: 2.7rem;
+            text-align: center;
             color: #0f172a;
         }
 
         .contact-box p {
             color: var(--text-light);
+            text-align: center;
             margin-bottom: 2.25rem;
             font-size: 1.2rem;
         }
 
-        .action-buttons-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            max-width: 450px;
-            margin: 0 auto;
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
         }
 
-        .action-buttons-group .cta-btn {
+        .form-group label {
+            display: block;
+            font-family: 'Fredoka', sans-serif;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
             width: 100%;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            border: 2px solid #cbd5e1;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            background: #f8fafc;
+            color: #1f2937;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.35rem;
+            display: none;
+            font-weight: 600;
+        }
+
+        .form-submit-container {
+            text-align: center;
+            margin-top: 2.25rem;
+        }
+
+        .form-submit-container .cta-btn {
+            background-color: #2563eb;
+            color: #ffffff;
+            width: 100%;
+        }
+
+        .form-submit-container .cta-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Success Message Notice */
+        #form-success-message {
+            display: none;
+            text-align: center;
+            background: #dcfce7;
+            color: #166534;
+            padding: 1.5rem;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            border: 1px solid #bbf7d0;
         }
 
         /* Footer */
@@ -476,26 +539,55 @@
 
         </div>
 
-        <!-- Interactive Contact & Scheduling Hub -->
+        <!-- Interactive Contact Form Box -->
         <div id="contact-form-section" class="contact-box">
-            <h2>✨ Let's Connect ✨</h2>
-            <p>Choose your preferred way to reach out or schedule a session instantly!</p>
+            <h2>✉️ Get in Touch ✉️</h2>
+            <p>Fill out the details below to submit your session request directly to my inbox!</p>
             
-            <div class="action-buttons-group">
-                <!-- Option A: Schedule Online (Replace URL with your Calendly or Google Calendar booking link) -->
-                <a href="https://calendly.com/YOUR_CALENDLY_USERNAME" target="_blank" class="cta-btn" style="background-color: #059669;">
-                    📅 Schedule a Session Online
-                </a>
+            <form id="secure-contact-form">
+                
+                <!-- HONEYPOT TRAP: Completely invisible to humans, catches bots -->
+                <div style="display:none !important;" aria-hidden="true">
+                    <label for="website_url">Do not fill this out if you are human:</label>
+                    <input type="text" id="website_url" name="website_url" tabindex="-1" autocomplete="off">
+                </div>
 
-                <!-- Option B: Direct Email Button -->
-                <a href="mailto:stephcsgrad@gmail.com?subject=Pandanomial%20Tutoring%20Inquiry" class="cta-btn">
-                    📧 Email Me Directly
-                </a>
-            </div>
-            
-            <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-light);">
-                Response time: Usually within 24 hours. Looking forward to helping you achieve your academic goals!
-            </p>
+                <div class="form-group">
+                    <label for="name">👤 Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name">
+                    <div id="name-error" class="error-message">Please enter a valid name (at least 2 characters).</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">📧 Your Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email address">
+                    <div id="email-error" class="error-message">Please enter a valid email address (e.g., name@example.com).</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">🎯 Primary Subject of Interest</label>
+                    <select id="subject">
+                        <option value="Computer Science & STEM">💻 Computer Science & STEM</option>
+                        <option value="Languages & Literature">🏛️ Languages & Literature</option>
+                        <option value="Humanities & Test Prep">📚 Humanities & Test Prep</option>
+                        <option value="Other / Multiple Subjects">🌟 Other / Multiple Subjects</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">✍️ Details / Goals</label>
+                    <textarea id="message" rows="4" placeholder="Tell me about your academic level, goals, or schedule requirements..."></textarea>
+                    <div id="message-error" class="error-message">Please provide a message with at least 10 characters detailing your goals.</div>
+                </div>
+
+                <div class="form-submit-container">
+                    <button type="submit" id="submit-btn" class="cta-btn">Send Session Request ✨🚀</button>
+                </div>
+
+                <div id="form-success-message">
+                    🎉 Thank you! Your request has been successfully sent to Steph. I will get back to you soon!
+                </div>
+            </form>
         </div>
 
     </div>
@@ -504,8 +596,9 @@
         <p>&copy; 2026 Pandanomial Tutoring. All rights reserved. Designed for K-12 students and learners in a bright study environment.</p>
     </footer>
 
-    <!-- Background Slideshow Script -->
+    <!-- JavaScript Handling Google Apps Script Direct Submission -->
     <script>
+        // 1. Background Image Auto-Rotation Slideshow
         const bgSlides = document.querySelectorAll('.bg-slide');
         let currentBgIndex = 0;
 
@@ -516,6 +609,95 @@
         }
 
         setInterval(rotateBackground, 1800);
+
+
+        // 2. Direct Submission to Google Apps Script Endpoint
+        document.getElementById('secure-contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            let isValid = true;
+
+            // Honeypot check for bots
+            const honeypot = document.getElementById('website_url').value;
+            if (honeypot !== "") {
+                return false;
+            }
+
+            // Get Form Fields
+            const nameField = document.getElementById('name');
+            const emailField = document.getElementById('email');
+            const subjectField = document.getElementById('subject');
+            const messageField = document.getElementById('message');
+            const submitBtn = document.getElementById('submit-btn');
+            const successBox = document.getElementById('form-success-message');
+
+            // Error Elements
+            const nameError = document.getElementById('name-error');
+            const emailError = document.getElementById('email-error');
+            const messageError = document.getElementById('message-error');
+
+            // Reset error states
+            [nameField, emailField, messageField].forEach(field => field.classList.remove('error'));
+            [nameError, emailError, messageError].forEach(err => err.style.display = 'none');
+
+            // Validation 1: Name Check
+            const namePattern = /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/;
+            if (!namePattern.test(nameField.value.trim())) {
+                nameField.classList.add('error');
+                nameError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Validation 2: Email Format Check
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailField.value.trim())) {
+                emailField.classList.add('error');
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            // Validation 3: Message Length Check
+            if (messageField.value.trim().length < 10) {
+                messageField.classList.add('error');
+                messageError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Sending to Steph... ⏳";
+
+                // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW BETWEEN THE QUOTES:
+                const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzL5SCtXIIekCnx65UvTCQ_BS-LeDh0LGwZGnMqYEA5K0ge1o6CdwiAaoRUZNl7DTb_vg/exec";
+
+                const formData = {
+                    name: nameField.value.trim(),
+                    email: emailField.value.trim(),
+                    interest: subjectField.value,
+                    message: messageField.value.trim()
+                };
+
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Required for Google Apps Script cross-origin requests
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => {
+                    // Success (no-cors mode doesn't allow reading response body, but triggers successfully)
+                    successBox.style.display = 'block';
+                    document.getElementById('secure-contact-form').reset();
+                    submitBtn.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Network error. Please check your connection and try again.");
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Send Session Request ✨🚀";
+                });
+            }
+        });
     </script>
 
 </body>
